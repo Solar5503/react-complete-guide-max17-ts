@@ -1,12 +1,13 @@
 import { FC } from 'react';
 import Todo from '../models/todo';
-import TodosItem from './TodosItem';
+import styles from './Todos.module.css';
+import TodoItem from './TodoItem';
 
 const Todos: FC<{ items: Todo[] }> = (props) => {
   return (
-    <ul>
+    <ul className={styles.todos}>
       {props.items.map((item) => (
-        <TodosItem key={item.id} todo={item} />
+        <TodoItem key={item.id} todo={item} />
       ))}
     </ul>
   );
