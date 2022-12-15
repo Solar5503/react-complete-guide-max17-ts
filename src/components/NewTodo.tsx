@@ -10,6 +10,7 @@ const NewTodo: FC<{ onAddTodo: (text: string) => void }> = ({ onAddTodo }) => {
     if (enteredTodo.trim().length === 0) return;
 
     onAddTodo(enteredTodo);
+    todoRef.current!.value = '';
   };
   return (
     <form onSubmit={submitHandler} className={styles.form}>
